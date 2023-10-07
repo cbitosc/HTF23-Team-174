@@ -7,3 +7,5 @@ async function fetchMoviesNowPlaying(){
     const movies=jsonResponse.results;
     console.log(movies);
 }
+
+fetchMoviesNowPlaying();
