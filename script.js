@@ -12,7 +12,9 @@ async function fetchMoviesNowPlaying(){
 }
 
 function displayMovies(movies){
-    moviesGrid.innerHTML=movies.map(movie =>)
-}
+    moviesGrid.innerHTML=movies.map(movie =>
+    `<img src="${imageBaseUrl}${movie.poster_path}"/>`
+    ).join("");
 
+}
 fetchMoviesNowPlaying();
