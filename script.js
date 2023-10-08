@@ -12,6 +12,7 @@ async function fetchMoviesNowPlaying(){
     const jsonResponse=await response.json();
     const movies=jsonResponse.results;
     displayMovies(movies);
+
 }
 function displayMovies(movies) {
     moviesGrid.innerHTML = movies.map((movie) =>
@@ -53,3 +54,38 @@ function displayMovies(movies){
         )
         .join("");
 }
+
+
+function displayMovies(movies) {
+    moviesGrid.innerHTML = movies.map(movie =>
+				`<div class="movie-card">
+	            <img src="${imageBaseUrl}${movie.poster_path}"/>
+	            <p>⭐${movie.vote_average}</p>
+	            <h1>${movie.title}</h1>
+	        </div>`
+    ).join("");
+}
+fetchMoviesNowPlaying();
+
+async function searchmovies(query){
+    const response=await fetch(`${apiBaseUrl}/search/movie?api_keys=${apiKey}&query="${query}"`);
+    const jsonResponse=await response.json();
+    const movies=jsonResponse.results;
+    displayMovies(movies);
+}
+function displayMovies(movies){
+    moviesGrid.innerHTML=movies
+        .map(
+            movie =>
+                `<div class ="movie-card">
+                    <img src="${imageBaseUrl}${movie.poster_path}"/>
+                    <p>⭐${movie.vote_average}</p>
+                    <h1>${movie.title}</h1>
+                </div>
+                `
+        )
+        .join("");
+}
+
+
+
