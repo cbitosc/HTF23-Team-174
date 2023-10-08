@@ -1,5 +1,5 @@
 #search-bar {
-   margin-left: 20vw;
+   margin-left: 45vw;
    display: flex;
    align-items: center;
 }
@@ -12,12 +12,12 @@
 }
 #search-bar input{
    margin-left: 20px;
-   height: 30px;
+   height: 40px;
    width: 700px;
    border-radius:5px
 }
 body {
-   background: #121212c3;
+   background: #ff4f2c;
 }
 
 #movies-Grid {
