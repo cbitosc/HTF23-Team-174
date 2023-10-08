@@ -13,10 +13,9 @@ async function fetchMoviesNowPlaying(){
 }
 
 function displayMovies(movies){
-    moviesGrid.innerHTML = movies.map(movie =>
-        `<img src="${imageBaseUrl}${movie.poster_path}"/>
-        <p>⭐${movie.vote_average}</p>
-        <h1>${movie.title}</h1>`
+    moviesGrid.innerHTML=movies.map(movie =>
+    `<img src="${imageBaseUrl}${movie.poster_path}"/>`
     ).join("");
+
 }
 fetchMoviesNowPlaying();
